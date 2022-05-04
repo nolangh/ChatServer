@@ -1,20 +1,12 @@
 const socket = io();
+const readFile = "chatLog.txt";
+const port = procees.argv.PORT || 3000;
 
-const messages = document.getElementById("messages");
-const form = document.getElementById("form");
-const input = document.getElementById("input");
+process.stdin.setEncoding("utf-8");
 
-form.addEventListener("submit", function (e) {
-	e.preventDefault();
-	if (input.value) {
-		socket.emit("chat message", input.value);
-		input.value = "";
+process.stdin.on("readable", () => {
+	let userInput;
+	while ((userInput = process.stdin.read()) !== null) {
+		client.write(userInput);
 	}
-});
-
-socket.on("chat message", function (msg) {
-	let item = document.createElement("li");
-	item.textContent = msg;
-	messages.appendChild(item);
-	window.scrollTo(0, document.body.scrollHeight);
 });

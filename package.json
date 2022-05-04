@@ -19,6 +19,7 @@
   "homepage": "https://github.com/nolangh/socket#readme",
   "dependencies": {
     "express": "^4.18.1",
+    "fs": "^0.0.1-security",
     "http": "^0.0.1-security",
     "socket.io": "^4.5.0"
   }
