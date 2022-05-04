@@ -1,0 +1,24 @@
+{
+  "name": "socket",
+  "version": "1.0.0",
+  "description": "test for chat server",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nolangh/socket.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nolangh/socket/issues"
+  },
+  "homepage": "https://github.com/nolangh/socket#readme",
+  "dependencies": {
+    "express": "^4.18.1",
+    "socket.io": "^4.5.0"
+  }
+}
