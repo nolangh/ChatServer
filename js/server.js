@@ -1,12 +1,21 @@
 /* ----------------------- ANCHOR Port and file paths ----------------------- */
-const port = process.env.PORT || 8080;
-const dataFile = "chatLog.txt";
-
+const express = require("express");
+// const dataFile = "chatLog.txt";
 /* ---------------------------- ANCHOR Libraries ---------------------------- */
-const app = require("express")();
-const fs = require("fs");
-const io = require("socket.io")(`${port}`);
+//const port = process.env.PORT || 8080;
+//const app = express();
+//const fs = require("fs");
+const io = require("socket.io")(8080);
+
+// app.get("/", (req, res) => {
+// 	res.send(`Server active on: ${port}`);
+// 	console.log(`Server active on: ${port}`);
+// });
 
 io.on("connection", (socket) => {
-	socket.emit("chat-message", "Hellow world"); //change this to emit the users name
+	socket.emit("chat-message", "Hello world"); //change this to emit the users name
 });
+
+// app.listen(port, () => {
+// 	console.log(`Server is active on: ${port}`);
+// });

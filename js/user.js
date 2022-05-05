@@ -1,6 +1,6 @@
 const socket = io();
 const readFile = "chatLog.txt";
-const port = procees.argv.PORT || 3000;
+const port = procees.env.PORT || 3000;
 
 process.stdin.setEncoding("utf-8");
 
