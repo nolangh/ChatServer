@@ -17,6 +17,7 @@ socket.on("user-message", (name) => {
 });
 
 messageForm.addEventListener("submit", (e) => {
+	// try setting this to .on isntead of eventListner
 	e.preventDefault();
 	const message = messageInput.value;
 	socket.emit("send-chat-message", message);
