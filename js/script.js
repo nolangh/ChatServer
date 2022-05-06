@@ -12,5 +12,5 @@ messageForm.addEventListener("submit", (e) => {
 
 	const message = messageInput.value;
 	socket.emit("send-chat-message", message);
-	messageInput = "";
+	messageInput.value = "";
 });
