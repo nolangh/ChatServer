@@ -15,6 +15,6 @@ io.on("connection", (socket) => {
 	});
 });
 
-// app.listen(port, () => {
+//app.listen(port, () => {
 // 	console.log(`Server is active on: ${port}`);
 // });
