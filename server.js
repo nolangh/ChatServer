@@ -9,9 +9,12 @@ io.on("connection", (socket) => {
 	socket.on("send-chat-message", (message) => {
 		socket.broadcast.emit("chat-message", {
 			message: message,
-			name: user[socket.id],
+			name: users[socket.id],
 		});
-		console.log(message);
+		socket.on("disconnect", () => {
+			socket.broadcast.emit("user-disconnected", users[socket.id]);
+			delete users[socket.id];
+		});
 	});
 });
 
