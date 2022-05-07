@@ -1,4 +1,5 @@
 const io = require("socket.io")(3000);
+
 const users = {};
 
 io.on("connection", (socket) => {
@@ -11,13 +12,15 @@ io.on("connection", (socket) => {
 			message: message,
 			name: users[socket.id],
 		});
-		socket.on("disconnect", () => {
-			socket.broadcast.emit("user-disconnected", users[socket.id]);
-			delete users[socket.id];
-		});
+	});
+	socket.on("disconnect", () => {
+		socket.broadcast.emit("user-disconnected", users[socket.id]);
+		delete users[socket.id];
 	});
 });
 
 //app.listen(port, () => {
 // 	console.log(`Server is active on: ${port}`);
 // });
+
+/* --------------------------------- ------- -------------------------------- */
