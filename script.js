@@ -1,6 +1,7 @@
 // !!!!! IMPORTANT read the README
-const fs = require("fs");
+
 const socket = io("http://localhost:3000");
+const dataFile = "./misc/chatLog.txt";
 const messageContainer = document.getElementById("message-container");
 const messageForm = document.getElementById("send-container");
 const messageInput = document.getElementById("message-input");
@@ -15,6 +16,7 @@ socket.on("chat-message", (data) => {
 
 socket.on("user-connected", (name) => {
 	appendMessage(`${name} joined the party`);
+	console.log(`${name} joined the party`);
 });
 
 socket.on("user-disconnected", (name) => {
