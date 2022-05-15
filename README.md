@@ -1,5 +1,6 @@
 # socket
 
+Sadly this is horribly optomized so theres some steps to get full functionality
 To run the app -
 1.run npm run devStart
 2.Go live with live server on the "server.js"
